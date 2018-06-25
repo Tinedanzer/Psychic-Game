@@ -14,25 +14,28 @@ var left = 10;
 
 function happy(){for (var i=0; i < letters.length; i=i+1)
   {
-    console.log ("I love" + " " + letters[i]);}}
+    console.log ("I love" + " " + letters[i]);
+  }}
 happy();
 
+var computerChoice = letters[Math.floor(Math.random() * letters.length)];
 document.onkeypress = function(event) {
   var userGuess = event.key;
   var node =document.createElement("li");
   var textnode =document.createTextNode(event.key);
   node.appendChild(textnode);
   document.getElementById("guesses").appendChild(node);
-//   document.getElementById('guesses').innerHTML= userGuess + ",";
-  var computerChoice = letters[Math.floor(Math.random() * letters.length)];
+  
+  // document.getElementById('guesses').innerHTML= userGuess + ",";
+  // var computerChoice = letters[Math.floor(Math.random() * letters.length)];
 
   if(userGuess === computerChoice){
       wins++;
-      computerChoice;
       console.log(computerChoice);
-      document.getElementById('guesses').innerHTML= userGuess
+      document.getElementById('guesses').innerHTML= userGuess;
       alert("YOU WIN!!!!!!!");
         left=10;
+        computerChoice = letters[Math.floor(Math.random() * letters.length)];
   }
   else{
       left--;
