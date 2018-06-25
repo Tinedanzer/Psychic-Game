@@ -31,7 +31,8 @@ document.onkeypress = function(event) {
       computerChoice;
       console.log(computerChoice);
       document.getElementById('guesses').innerHTML= userGuess
-      alert("YOU WIN!!!!!!!")
+      alert("YOU WIN!!!!!!!");
+        left=10;
   }
   else{
       left--;
